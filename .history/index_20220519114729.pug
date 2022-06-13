@@ -1,0 +1,1630 @@
+doctype html
+html.no-js(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='x-ua-compatible', content='ie=edge')
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title Cognizant
+    link(rel='stylesheet', href='css/bootstrap.css')
+    link(rel='stylesheet', href='css/bootstrap-grid.css')
+    link(rel='stylesheet', href='css/cheatsheet.css')
+
+
+    // ==============================  FAVICONS  ==============================
+    link(rel="apple-touch-icon", sizes="180x180", href="./favicons/apple-touch-icon.png")
+    link(rel="icon", type="image/png", sizes="32x32", href="./favicons/favicon-32x32.png")
+    link(rel="icon", type="image/png", sizes="194x194", href="./favicons/favicon-194x194.png")
+    link(rel="icon", type="image/png", sizes="192x192", href="./favicons/android-chrome-192x192.png")
+    link(rel="icon", type="image/png", sizes="16x16", href="./favicons/favicon-16x16.png")
+    link(rel="manifest", href="./favicons/site.webmanifest")
+    link(rel="mask-icon", href="./favicons/safari-pinned-tab.svg", color="#0033a0")
+    link(rel="shortcut icon", href="./favicons/favicon.ico")
+    meta(name="msapplication-TileColor", content="#0033a0")
+    meta(name="msapplication-TileImage", content="./favicons/mstile-144x144.png")
+    meta(name="msapplication-config", content="./favicons/browserconfig.xml")
+    meta(name="theme-color", content="#ffffff")
+
+  body
+    header.bd-header.bg-dark.py-3.d-flex.align-items-stretch.border-bottom.border-dark
+      .container-fluid.d-flex.align-items-center
+        h1.d-flex.align-items-center.fs-4.text-white.mb-0
+          img.me-3(src="https://www.cognizant.com/content/dam/cognizant/en_us/dotcom/logos/COG-Logo-White.svg", height="30", alt="Bootstrap" style="filter: brightness(255);")
+          |         Cheatsheet
+        a.ms-auto.link-light(href="https://www.getbootstraop.com/docs/5.0/examples/cheatsheet-rtl/" target="_blank" rel="noopener", hreflang="ar") RTL cheatsheet
+    aside.bd-aside.sticky-xl-top.text-muted.align-self-start.mb-3.mb-xl-5.px-2
+      h2.h6.pt-4.pb-3.mb-4.border-bottom On this page
+      nav#toc.small
+        ul.list-unstyled
+          li.my-2
+            button.btn.d-inline-flex.align-items-center(data-bs-toggle="collapse" data-bs-target="#contents-collapse") Contents
+            ul#contents-collapse.list-unstyled.ps-3.collapse
+              li
+                a.d-inline-flex.align-items-center.rounded(href="#color") Color
+              li
+                a.d-inline-flex.align-items-center.rounded(href="#typography") Typography
+              li
+                a.d-inline-flex.align-items-center.rounded(href="#grid") Grid
+              li
+                a.d-inline-flex.align-items-center.rounded(href="#images") Images
+              li
+                a.d-inline-flex.align-items-center.rounded(href="#tables") Tables
+              li
+                a.d-inline-flex.align-items-center.rounded(href="#figures") Figures
+          li.my-2
+            button.btn.d-inline-flex.align-items-center(data-bs-toggle="collapse" data-bs-target="#forms-collapse") Forms
+            ul#forms-collapse.list-unstyled.ps-3.collapse
+              li
+                a.d-inline-flex.align-items-center.rounded(href="#overview") Overview
+              li
+                a.d-inline-flex.align-items-center.rounded(href="#disabled-forms") Disabled forms
+              li
+                a.d-inline-flex.align-items-center.rounded(href="#sizing") Sizing
+              li
+                a.d-inline-flex.align-items-center.rounded(href="#input-group") Input group
+              li
+                a.d-inline-flex.align-items-center.rounded(href="#floating-labels") Floating labels
+              li
+                a.d-inline-flex.align-items-center.rounded(href="#validation") Validation
+          li.my-2
+            button.btn.d-inline-flex.align-items-center(data-bs-toggle="collapse" data-bs-target="#components-collapse") Components
+            ul#components-collapse.list-unstyled.ps-3.collapse
+              li
+                a.d-inline-flex.align-items-center.rounded(href="#accordion") Accordion
+              li
+                a.d-inline-flex.align-items-center.rounded(href="#alerts") Alerts
+              li
+                a.d-inline-flex.align-items-center.rounded(href="#badge") Badge
+              li
+                a.d-inline-flex.align-items-center.rounded(href="#breadcrumb") Breadcrumb
+              li
+                a.d-inline-flex.align-items-center.rounded.active(href="#buttons") Buttons
+              li
+                a.d-inline-flex.align-items-center.rounded(href="#button-group") Button group
+              li
+                a.d-inline-flex.align-items-center.rounded(href="#card") Card
+              li
+                a.d-inline-flex.align-items-center.rounded(href="#carousel") Carousel
+              li
+                a.d-inline-flex.align-items-center.rounded(href="#dropdowns") Dropdowns
+              li
+                a.d-inline-flex.align-items-center.rounded(href="#list-group") List group
+              li
+                a.d-inline-flex.align-items-center.rounded(href="#modal") Modal
+              li
+                a.d-inline-flex.align-items-center.rounded(href="#navs") Navs
+              li
+                a.d-inline-flex.align-items-center.rounded(href="#navbar") Navbar
+              li
+                a.d-inline-flex.align-items-center.rounded(href="#pagination") Pagination
+              li
+                a.d-inline-flex.align-items-center.rounded(href="#popovers") Popovers
+              li
+                a.d-inline-flex.align-items-center.rounded(href="#progress") Progress
+              li
+                a.d-inline-flex.align-items-center.rounded(href="#scrollspy") Scrollspy
+              li
+                a.d-inline-flex.align-items-center.rounded(href="#spinners") Spinners
+              li
+                a.d-inline-flex.align-items-center.rounded(href="#toasts") Toasts
+              li
+                a.d-inline-flex.align-items-center.rounded(href="#tooltips") Tooltips
+    .bd-cheatsheet.container-fluid.bg-body
+      section#content
+        h2.sticky-xl-top.fw-bold.pt-3.pt-xl-5.pb-2.pb-xl-3 Contents
+        article#color.my-3
+          .bd-heading.sticky-xl-top.align-self-start.mt-5.mb-3.mt-xl-0.mb-xl-2
+            h3 Color
+            a.d-flex.align-items-center(href="https://www.getbootstraop.com/docs/5.0/content/typography/" target="_blank" rel="noopener") Documentation
+          .row.font-monospace
+            //- .col-md-4.mb-3
+              .p-3.mb-2.position-relative.bg-primary
+                strong.d-block $blue-dark
+                | #0d6efd
+              .p-3.bg-primary-100 $blue-dark-100
+              .p-3.bg-primary-200 $blue-dark-200
+              .p-3.bg-primary-300 $blue-dark-300
+              .p-3.bg-primary-400 $blue-dark-400
+              .p-3.bg-primary-500 $blue-dark-500
+              .p-3.bg-primary-600 $blue-dark-600
+              .p-3.bg-primary-700 $blue-dark-700
+              .p-3.bg-primary-800 $blue-dark-800
+              .p-3.bg-primary-900 $blue-dark-900
+            //- .col-md-4.mb-3
+              .p-3.mb-2.position-relative.bg-blue-medium
+                strong.d-block $blue-medium
+                | #0d6efd
+              .p-3.bg-blue-medium-100 $blue-medium-100
+              .p-3.bg-blue-medium-200 $blue-medium-200
+              .p-3.bg-blue-medium-300 $blue-medium-300
+              .p-3.bg-blue-medium-400 $blue-medium-400
+              .p-3.bg-blue-medium-500 $blue-medium-500
+              .p-3.bg-blue-medium-600 $blue-medium-600
+              .p-3.bg-blue-medium-700 $blue-medium-700
+              .p-3.bg-blue-medium-800 $blue-medium-800
+              .p-3.bg-blue-medium-900 $blue-medium-900
+            //- .col-md-4.mb-3
+              .p-3.mb-2.position-relative.bg-blue-light
+                strong.d-block $blue-light
+                | #0d6efd
+              .p-3.bg-blue-light-100 $blue-light-100
+              .p-3.bg-blue-light-200 $blue-light-200
+              .p-3.bg-blue-light-300 $blue-light-300
+              .p-3.bg-blue-light-400 $blue-light-400
+              .p-3.bg-blue-light-500 $blue-light-500
+              .p-3.bg-blue-light-600 $blue-light-600
+              .p-3.bg-blue-light-700 $blue-light-700
+              .p-3.bg-blue-light-800 $blue-light-800
+              .p-3.bg-blue-light-900 $blue-light-900
+            //- .col-md-4.mb-3
+              .p-3.mb-2.position-relative.bg-teal-dark
+                strong.d-block $teal-light
+                | #0d6efd
+              .p-3.bg-teal-dark-100 $teal-dark-100
+              .p-3.bg-teal-dark-200 $teal-dark-200
+              .p-3.bg-teal-dark-300 $teal-dark-300
+              .p-3.bg-teal-dark-400 $teal-dark-400
+              .p-3.bg-teal-dark-500 $teal-dark-500
+              .p-3.bg-teal-dark-600 $teal-dark-600
+              .p-3.bg-teal-dark-700 $teal-dark-700
+              .p-3.bg-teal-dark-800 $teal-dark-800
+              .p-3.bg-teal-dark-900 $teal-dark-900
+            //- .col-md-4.mb-3
+              .p-3.mb-2.position-relative.bg-teal-medium
+                strong.d-block $teal-medium
+                | #0d6efd
+              .p-3.bg-teal-medium-100 $teal-medium-100
+              .p-3.bg-teal-medium-200 $teal-medium-200
+              .p-3.bg-teal-medium-300 $teal-medium-300
+              .p-3.bg-teal-medium-400 $teal-medium-400
+              .p-3.bg-teal-medium-500 $teal-medium-500
+              .p-3.bg-teal-medium-600 $teal-medium-600
+              .p-3.bg-teal-medium-700 $teal-medium-700
+              .p-3.bg-teal-medium-800 $teal-medium-800
+              .p-3.bg-teal-medium-900 $teal-medium-900
+            //- .col-md-4.mb-3
+              .p-3.mb-2.position-relative.bg-teal-light
+                strong.d-block $teal-light
+                | #0d6efd
+              .p-3.bg-teal-light-100 $teal-light-100
+              .p-3.bg-teal-light-200 $teal-light-200
+              .p-3.bg-teal-light-300 $teal-light-300
+              .p-3.bg-teal-light-400 $teal-light-400
+              .p-3.bg-teal-light-500 $teal-light-500
+              .p-3.bg-teal-light-600 $teal-light-600
+              .p-3.bg-teal-light-700 $teal-light-700
+              .p-3.bg-teal-light-800 $teal-light-800
+              .p-3.bg-teal-light-900 $teal-light-900
+            //- .col-md-4.mb-3
+              .p-3.mb-2.position-relative.bg-gray-dark
+                strong.d-block $gray-dark
+                | #0d6efd
+              .p-3.bg-gray-dark-100 $gray-dark-100
+              .p-3.bg-gray-dark-200 $gray-dark-200
+              .p-3.bg-gray-dark-300 $gray-dark-300
+              .p-3.bg-gray-dark-400 $gray-dark-400
+              .p-3.bg-gray-dark-500 $gray-dark-500
+              .p-3.bg-gray-dark-600 $gray-dark-600
+              .p-3.bg-gray-dark-700 $gray-dark-700
+              .p-3.bg-gray-dark-800 $gray-dark-800
+              .p-3.bg-gray-dark-900 $gray-dark-900
+            //- .col-md-4.mb-3
+              .p-3.mb-2.position-relative.bg-gray-medium
+                strong.d-block $gray-medium
+                | #0d6efd
+              .p-3.bg-gray-medium-100 $gray-medium-100
+              .p-3.bg-gray-medium-200 $gray-medium-200
+              .p-3.bg-gray-medium-300 $gray-medium-300
+              .p-3.bg-gray-medium-400 $gray-medium-400
+              .p-3.bg-gray-medium-500 $gray-medium-500
+              .p-3.bg-gray-medium-600 $gray-medium-600
+              .p-3.bg-gray-medium-700 $gray-medium-700
+              .p-3.bg-gray-medium-800 $gray-medium-800
+              .p-3.bg-gray-medium-900 $gray-medium-900
+            //- .col-md-4.mb-3
+              .p-3.mb-2.position-relative.bg-gray-light
+                strong.d-block $gray-light
+                | #0d6efd
+              .p-3.bg-gray-light-100 $gray-light-100
+              .p-3.bg-gray-light-200 $gray-light-200
+              .p-3.bg-gray-light-300 $gray-light-300
+              .p-3.bg-gray-light-400 $gray-light-400
+              .p-3.bg-gray-light-500 $gray-light-500
+              .p-3.bg-gray-light-600 $gray-light-600
+              .p-3.bg-gray-light-700 $gray-light-700
+              .p-3.bg-gray-light-800 $gray-light-800
+              .p-3.bg-gray-light-900 $gray-light-900
+            //- .col-md-4.mb-3
+              .p-3.mb-2.position-relative.bg-red
+                strong.d-block $red
+                | #dc3545
+              .p-3.bg-red-100 $red-100
+              .p-3.bg-red-200 $red-200
+              .p-3.bg-red-300 $red-300
+              .p-3.bg-red-400 $red-400
+              .p-3.bg-red-500 $red-500
+              .p-3.bg-red-600 $red-600
+              .p-3.bg-red-700 $red-700
+              .p-3.bg-red-800 $red-800
+              .p-3.bg-red-900 $red-900
+            //- .col-md-4.mb-3
+              .p-3.mb-2.position-relative.bg-yellow
+                strong.d-block $yellow
+                | #ffc107
+              .p-3.bg-yellow-100 $yellow-100
+              .p-3.bg-yellow-200 $yellow-200
+              .p-3.bg-yellow-300 $yellow-300
+              .p-3.bg-yellow-400 $yellow-400
+              .p-3.bg-yellow-500 $yellow-500
+              .p-3.bg-yellow-600 $yellow-600
+              .p-3.bg-yellow-700 $yellow-700
+              .p-3.bg-yellow-800 $yellow-800
+              .p-3.bg-yellow-900 $yellow-900
+            //- .col-md-4.mb-3
+              .p-3.mb-2.position-relative.bg-green
+                strong.d-block $green
+                | #198754
+              .p-3.bg-green-100 $green-100
+              .p-3.bg-green-200 $green-200
+              .p-3.bg-green-300 $green-300
+              .p-3.bg-green-400 $green-400
+              .p-3.bg-green-500 $green-500
+              .p-3.bg-green-600 $green-600
+              .p-3.bg-green-700 $green-700
+              .p-3.bg-green-800 $green-800
+              .p-3.bg-green-900 $green-900
+            //- .col-md-4.mb-3
+              .p-3.mb-2.bg-black.text-white
+                strong.d-block $black
+                | #000
+              .p-3.mb-2.bg-white.border
+                strong.d-block $white
+                | #fff
+
+        article#typography.my-3
+          .bd-heading.sticky-xl-top.align-self-start.mt-5.mb-3.mt-xl-0.mb-xl-2
+            h3 Typography
+            a.d-flex.align-items-center(href="https://www.getbootstraop.com/docs/5.0/content/typography/" target="_blank" rel="noopener") Documentation
+          div
+            .bd-example
+              p.display-1 Display 1
+              p.display-2 Display 2
+              p.display-3 Display 3
+              p.display-4 Display 4
+              p.display-5 Display 5
+              p.display-6 Display 6
+            .bd-example
+              p.h1 Heading 1
+              p.h2 Heading 2
+              p.h3 Heading 3
+              p.h4 Heading 4
+              p.h5 Heading 5
+              p.h6 Heading 6
+            .bd-example
+              p.lead
+                | This is a lead paragraph. It stands out from regular paragraphs.
+            .bd-example
+              p
+                | This is a basic paragraph. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta earum necessitatibus vitae, nesciunt placeat sed ipsum similique quia magni consequatur nisi eius fugiat, reprehenderit aspernatur! Cum laboriosam deleniti corporis quaerat debitis eum reprehenderit, facilis nisi dolores laborum tempore ipsam aspernatur odio accusamus vel velit magni veritatis officiis, quam autem neque.
+            .bd-example
+              p
+                | You can use the mark tag to
+                mark highlight
+                |  text.
+              p
+                del This line of text is meant to be treated as deleted text.
+              p
+                s This line of text is meant to be treated as no longer accurate.
+              p
+                ins This line of text is meant to be treated as an addition to the document.
+              p
+                u This line of text will render as underlined.
+              p
+                small This line of text is meant to be treated as fine print.
+              p
+                strong This line rendered as bold text.
+              p
+                em This line rendered as italicized text.
+            .bd-example
+              blockquote.blockquote
+                p A well-known quote, contained in a blockquote element.
+                footer.blockquote-footer
+                  | Someone famous in
+                  cite(title="Source Title") Source Title
+            .bd-example
+              ul.list-unstyled
+                li This is a list.
+                li It appears completely unstyled.
+                li Structurally, it&apos;s still a list.
+                li However, this style only applies to immediate child elements.
+                li
+                  | Nested lists:
+                  ul
+                    li are unaffected by this style
+                    li will still show a bullet
+                    li and have appropriate left margin
+                li This may still come in handy in some situations.
+            .bd-example
+              ul.list-inline
+                li.list-inline-item This is a list item.
+                li.list-inline-item And another one.
+                li.list-inline-item But they&apos;re displayed inline.
+        article#grid.my-3
+          .bd-heading.sticky-xl-top.align-self-start.mt-5.mb-3.mt-xl-0.mb-xl-2
+            h3 Grid
+            a.d-flex.align-items-center(href="https://www.getbootstrap.com/docs/5.1/layout/css-grid/" target="_blank" rel="noopener") Documentation
+          div
+            .bd-example
+              .container.border.border-1
+                .grid
+                  .g-col.g-col-12
+                    p Using CSS Grid
+                .grid
+                  .g-col.g-col-sm-1.p-3.bg-gray-light-100.border.border-1 1
+                .grid
+                  .g-col.g-col-sm-2.p-3.bg-gray-light-100.border.border-1 2
+                .grid
+                  .g-col.g-col-sm-3.p-3.bg-gray-light-100.border.border-1 3
+                .grid
+                  .g-col.g-col-sm-4.p-3.bg-gray-light-100.border.border-1 4
+                .grid
+                  .g-col.g-col-sm-5.p-3.bg-gray-light-100.border.border-1 5
+                .grid
+                  .g-col.g-col-sm-6.p-3.bg-gray-light-100.border.border-1 6
+                .grid
+                  .g-col.g-col-sm-7.p-3.bg-gray-light-100.border.border-1 7
+                .grid
+                  .g-col.g-col-sm-8.p-3.bg-gray-light-100.border.border-1 8
+                .grid
+                  .g-col.g-col-sm-9.p-3.bg-gray-light-100.border.border-1 9
+                .grid
+                  .g-col.g-col-sm-10.p-3.bg-gray-light-100.border.border-1 10
+                .grid
+                  .g-col.g-col-sm-11.p-3.bg-gray-light-100.border.border-1 11
+                .grid
+                  .g-col.g-col-sm-12.p-3.bg-gray-light-100.border.border-1 12
+
+        article#images.my-3
+          .bd-heading.sticky-xl-top.align-self-start.mt-5.mb-3.mt-xl-0.mb-xl-2
+            h3 Images
+            a.d-flex.align-items-center(href="https://www.getbootstraop.com/docs/5.0/content/images/" target="_blank" rel="noopener") Documentation
+          div
+            .bd-example
+              svg.bd-placeholder-img.bd-placeholder-img-lg.img-fluid(width="100%", height="250", xmlns="http://www.w3.org/2000/svg", role="img", aria-label="Placeholder: Responsive image", preserveaspectratio="xMidYMid slice", focusable="false")
+                title Placeholder
+                rect(width="100%", height="100%", fill="#868e96")
+                text(x="50%", y="50%", fill="#dee2e6", dy=".3em") Responsive image
+            .bd-example
+              svg.bd-placeholder-img.img-thumbnail(width="200", height="200", xmlns="http://www.w3.org/2000/svg", role="img", aria-label="A generic square placeholder image with a white border around it, making it resemble a photograph taken with an old instant camera: 200x200", preserveaspectratio="xMidYMid slice", focusable="false")
+                title
+                  | A generic square placeholder image with a white border around it, making it resemble a photograph taken with an old instant camera
+                rect(width="100%", height="100%", fill="#868e96")
+                text(x="50%", y="50%", fill="#dee2e6", dy=".3em") 200x200
+        article#tables.my-3
+          .bd-heading.sticky-xl-top.align-self-start.mt-5.mb-3.mt-xl-0.mb-xl-2
+            h3 Tables
+            a.d-flex.align-items-center(href="https://www.getbootstraop.com/docs/5.0/content/tables/" target="_blank" rel="noopener") Documentation
+          div
+            .bd-example
+              table.table.table-striped
+                thead
+                  tr
+                    th(scope="col") #
+                    th(scope="col") First
+                    th(scope="col") Last
+                    th(scope="col") Handle
+                tbody
+                  tr
+                    th(scope="row") 1
+                    td Mark
+                    td Otto
+                    td @mdo
+                  tr
+                    th(scope="row") 2
+                    td Jacob
+                    td Thornton
+                    td @fat
+                  tr
+                    th(scope="row") 3
+                    td(colspan="2") Larry the Bird
+                    td @twitter
+            .bd-example
+              table.table.table-dark.table-borderless
+                thead
+                  tr
+                    th(scope="col") #
+                    th(scope="col") First
+                    th(scope="col") Last
+                    th(scope="col") Handle
+                tbody
+                  tr
+                    th(scope="row") 1
+                    td Mark
+                    td Otto
+                    td @mdo
+                  tr
+                    th(scope="row") 2
+                    td Jacob
+                    td Thornton
+                    td @fat
+                  tr
+                    th(scope="row") 3
+                    td(colspan="2") Larry the Bird
+                    td @twitter
+            .bd-example
+              table.table.table-hover
+                thead
+                  tr
+                    th(scope="col") Class
+                    th(scope="col") Heading
+                    th(scope="col") Heading
+                tbody
+                  tr
+                    th(scope="row") Default
+                    td Cell
+                    td Cell
+                  tr.table-primary
+                    th(scope="row") Primary
+                    td Cell
+                    td Cell
+                  tr.table-secondary
+                    th(scope="row") Secondary
+                    td Cell
+                    td Cell
+                  tr.table-success
+                    th(scope="row") Success
+                    td Cell
+                    td Cell
+                  tr.table-danger
+                    th(scope="row") Danger
+                    td Cell
+                    td Cell
+                  tr.table-warning
+                    th(scope="row") Warning
+                    td Cell
+                    td Cell
+                  tr.table-info
+                    th(scope="row") Info
+                    td Cell
+                    td Cell
+                  tr.table-light
+                    th(scope="row") Light
+                    td Cell
+                    td Cell
+                  tr.table-dark
+                    th(scope="row") Dark
+                    td Cell
+                    td Cell
+            .bd-example
+              table.table.table-sm.table-bordered
+                thead
+                  tr
+                    th(scope="col") #
+                    th(scope="col") First
+                    th(scope="col") Last
+                    th(scope="col") Handle
+                tbody
+                  tr
+                    th(scope="row") 1
+                    td Mark
+                    td Otto
+                    td @mdo
+                  tr
+                    th(scope="row") 2
+                    td Jacob
+                    td Thornton
+                    td @fat
+                  tr
+                    th(scope="row") 3
+                    td(colspan="2") Larry the Bird
+                    td @twitter
+        article#figures.my-3
+          .bd-heading.sticky-xl-top.align-self-start.mt-5.mb-3.mt-xl-0.mb-xl-2
+            h3 Figures
+            a.d-flex.align-items-center(href="https://www.getbootstraop.com/docs/5.0/content/figures/" target="_blank" rel="noopener") Documentation
+          div
+            .bd-example
+              figure.figure
+                svg.bd-placeholder-img.figure-img.img-fluid.rounded(width="400", height="300", xmlns="http://www.w3.org/2000/svg", role="img", aria-label="Placeholder: 400x300", preserveaspectratio="xMidYMid slice", focusable="false")
+                  title Placeholder
+                  rect(width="100%", height="100%", fill="#868e96")
+                  text(x="50%", y="50%", fill="#dee2e6", dy=".3em") 400x300
+                figcaption.figure-caption A caption for the above image.
+      section#forms
+        h2.sticky-xl-top.fw-bold.pt-3.pt-xl-5.pb-2.pb-xl-3 Forms
+        article#overview.my-3
+          .bd-heading.sticky-xl-top.align-self-start.mt-5.mb-3.mt-xl-0.mb-xl-2
+            h3 Overview
+            a.d-flex.align-items-center(href="https://www.getbootstraop.com/docs/5.0/forms/overview/" target="_blank" rel="noopener") Documentation
+          div
+            .bd-example
+              form
+                .mb-3
+                  label.form-label(for="exampleInputEmail1") Email address
+                  input#exampleInputEmail1.form-control(type="email", aria-describedby="emailHelp")
+                  #emailHelp.form-text We&apos;ll never share your email with anyone else.
+                .mb-3
+                  label.form-label(for="exampleInputPassword1") Password
+                  input#exampleInputPassword1.form-control(type="password")
+                .mb-3.form-check
+                  input#exampleCheck1.form-check-input(type="checkbox")
+                  label.form-check-label(for="exampleCheck1") Check me out
+                fieldset.mb-3
+                  legend Radios buttons
+                  .form-check
+                    input#exampleRadio1.form-check-input(type="radio", name="radios")
+                    label.form-check-label(for="exampleRadio1") Default radio
+                  .mb-3.form-check
+                    input#exampleRadio2.form-check-input(type="radio", name="radios")
+                    label.form-check-label(for="exampleRadio2") Another radio
+                .mb-3
+                  label.form-label(for="customFile") Upload
+                  input#customFile.form-control(type="file")
+                .mb-3.form-check.form-switch
+                  input#flexSwitchCheckChecked.form-check-input(type="checkbox", checked="")
+                  label.form-check-label(for="flexSwitchCheckChecked") Checked switch checkbox input
+                .mb-3
+                  label.form-label(for="customRange3") Example range
+                  input#customRange3.form-range(type="range", min="0", max="5", step="0.5")
+                button.btn(type="submit") Submit
+        article#disabled-forms.my-3
+          .bd-heading.sticky-xl-top.align-self-start.mt-5.mb-3.mt-xl-0.mb-xl-2
+            h3 Disabled forms
+            a.d-flex.align-items-center(href="https://www.getbootstraop.com/docs/5.0/forms/overview/#disabled-forms") Documentation
+          div
+            .bd-example
+              form
+                fieldset(disabled="", aria-label="Disabled fieldset example")
+                  .mb-3
+                    label.form-label(for="disabledTextInput") Disabled input
+                    input#disabledTextInput.form-control(type="text", placeholder="Disabled input")
+                  .mb-3
+                    label.form-label(for="disabledSelect") Disabled select menu
+                    select#disabledSelect.form-select
+                      option Disabled select
+                  .mb-3
+                    .form-check
+                      input#disabledFieldsetCheck.form-check-input(type="checkbox", disabled="")
+                      label.form-check-label(for="disabledFieldsetCheck")
+                        | Can&apos;t check this
+                  fieldset.mb-3
+                    legend Disabled radios buttons
+                    .form-check
+                      input#disabledRadio1.form-check-input(type="radio", name="radios", disabled="")
+                      label.form-check-label(for="disabledRadio1") Disabled radio
+                    .mb-3.form-check
+                      input#disabledRadio2.form-check-input(type="radio", name="radios", disabled="")
+                      label.form-check-label(for="disabledRadio2") Another radio
+                  .mb-3
+                    label.form-label(for="disabledCustomFile") Upload
+                    input#disabledCustomFile.form-control(type="file", disabled="")
+                  .mb-3.form-check.form-switch
+                    input#disabledSwitchCheckChecked.form-check-input(type="checkbox", checked="", disabled="")
+                    label.form-check-label(for="disabledSwitchCheckChecked") Disabled checked switch checkbox input
+                  .mb-3
+                    label.form-label(for="disabledRange") Disabled range
+                    input#disabledRange.form-range(type="range", min="0", max="5", step="0.5")
+                  button.btn(type="submit") Submit
+        article#sizing.my-3
+          .bd-heading.sticky-xl-top.align-self-start.mt-5.mb-3.mt-xl-0.mb-xl-2
+            h3 Sizing
+            a.d-flex.align-items-center(href="https://www.getbootstraop.com/docs/5.0/forms/form-control/#sizing") Documentation
+          div
+            .bd-example
+              .mb-3
+                input.form-control.form-control-lg(type="text", placeholder=".form-control-lg", aria-label=".form-control-lg example")
+              .mb-3
+                select.form-select.form-select-lg.mb-3(aria-label=".form-select-lg example")
+                  option(selected="") Open this select menu
+                  option(value="1") One
+                  option(value="2") Two
+                  option(value="3") Three
+              .mb-3
+                input.form-control.form-control-lg(type="file", aria-label="Large file input example")
+            .bd-example
+              .mb-3
+                input.form-control.form-control-sm(type="text", placeholder=".form-control-sm", aria-label=".form-control-sm example")
+              .mb-3
+                select.form-select.form-select-sm(aria-label=".form-select-sm example")
+                  option(selected="") Open this select menu
+                  option(value="1") One
+                  option(value="2") Two
+                  option(value="3") Three
+              .mb-3
+                input.form-control.form-control-sm(type="file", aria-label="Small file input example")
+        article#input-group.my-3
+          .bd-heading.sticky-xl-top.align-self-start.mt-5.mb-3.mt-xl-0.mb-xl-2
+            h3 Input group
+            a.d-flex.align-items-center(href="https://www.getbootstraop.com/docs/5.0/forms/input-group/" target="_blank" rel="noopener") Documentation
+          div
+            .bd-example
+              .input-group.mb-3
+                span#basic-addon1.input-group-text @
+                input.form-control(type="text", placeholder="Username", aria-label="Username", aria-describedby="basic-addon1")
+              .input-group.mb-3
+                input.form-control(type="text", placeholder="Recipient's username", aria-label="Recipient's username", aria-describedby="basic-addon2")
+                span#basic-addon2.input-group-text @example.com
+              label.form-label(for="basic-url") Your vanity URL
+              .input-group.mb-3
+                span#basic-addon3.input-group-text https://example.com/users/
+                input#basic-url.form-control(type="text", aria-describedby="basic-addon3")
+              .input-group.mb-3
+                span.input-group-text $
+                input.form-control(type="text", aria-label="Amount (to the nearest dollar)")
+                span.input-group-text .00
+              .input-group
+                span.input-group-text With textarea
+                textarea.form-control(aria-label="With textarea")
+        article#floating-labels.my-3
+          .bd-heading.sticky-xl-top.align-self-start.mt-5.mb-3.mt-xl-0.mb-xl-2
+            h3 Floating labels
+            a.d-flex.align-items-center(href="https://www.getbootstraop.com/docs/5.0/forms/floating-labels/" target="_blank" rel="noopener") Documentation
+          div
+            .bd-example
+              form
+                .form-floating.mb-3
+                  input#floatingInput.form-control(type="email", placeholder="name@example.com")
+                  label(for="floatingInput") Email address
+                .form-floating
+                  input#floatingPassword.form-control(type="password", placeholder="Password")
+                  label(for="floatingPassword") Password
+        article#validation.my-3
+          .bd-heading.sticky-xl-top.align-self-start.mt-5.mb-3.mt-xl-0.mb-xl-2
+            h3 Validation
+            a.d-flex.align-items-center(href="https://www.getbootstraop.com/docs/5.0/forms/validation/" target="_blank" rel="noopener") Documentation
+          div
+            .bd-example
+              form.row.g-3
+                .col-md-4
+                  label.form-label(for="validationServer01") First name
+                  input#validationServer01.form-control.is-valid(type="text", value="Mark", required="")
+                  .valid-feedback
+                    | Looks good!
+                .col-md-4
+                  label.form-label(for="validationServer02") Last name
+                  input#validationServer02.form-control.is-valid(type="text", value="Otto", required="")
+                  .valid-feedback
+                    | Looks good!
+                .col-md-4
+                  label.form-label(for="validationServerUsername") Username
+                  .input-group.has-validation
+                    span#inputGroupPrepend3.input-group-text @
+                    input#validationServerUsername.form-control.is-invalid(type="text", aria-describedby="inputGroupPrepend3", required="")
+                    .invalid-feedback
+                      | Please choose a username.
+                .col-md-6
+                  label.form-label(for="validationServer03") City
+                  input#validationServer03.form-control.is-invalid(type="text", required="")
+                  .invalid-feedback
+                    | Please provide a valid city.
+                .col-md-3
+                  label.form-label(for="validationServer04") State
+                  select#validationServer04.form-select.is-invalid(required="")
+                    option(selected="", disabled="", value="") Choose...
+                    option ...
+                  .invalid-feedback
+                    | Please select a valid state.
+                .col-md-3
+                  label.form-label(for="validationServer05") Zip
+                  input#validationServer05.form-control.is-invalid(type="text", required="")
+                  .invalid-feedback
+                    | Please provide a valid zip.
+                .col-12
+                  .form-check
+                    input#invalidCheck3.form-check-input.is-invalid(type="checkbox", value="", required="")
+                    label.form-check-label(for="invalidCheck3")
+                      | Agree to terms and conditions
+                    .invalid-feedback
+                      | You must agree before submitting.
+                .col-12
+                  button.btn(type="submit") Submit form
+      section#components
+        h2.sticky-xl-top.fw-bold.pt-3.pt-xl-5.pb-2.pb-xl-3 Components
+        article#accordion.my-3
+          .bd-heading.sticky-xl-top.align-self-start.mt-5.mb-3.mt-xl-0.mb-xl-2
+            h3 Accordion
+            a.d-flex.align-items-center(href="https://www.getbootstraop.com/docs/5.0/components/accordion/" target="_blank" rel="noopener") Documentation
+          div
+            .bd-example
+              #accordionExample.accordion
+                .accordion-item
+                  h4#headingOne.accordion-header
+                    button.accordion-button(type="button", data-bs-toggle="collapse", data-bs-target="#collapseOne" aria-controls="collapseOne")
+                      | Accordion Item #1
+                  #collapseOne.accordion-collapse.collapse.show(aria-labelledby="headingOne", data-bs-parent="#accordionExample")
+                    .accordion-body
+                      strong This is the first item&apos;s accordion body.
+                      |  It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It&apos;s also worth noting that just about any HTML can go within the
+                      code .accordion-body
+                      | , though the transition does limit overflow.
+                .accordion-item
+                  h4#headingTwo.accordion-header
+                    button.accordion-button.collapsed(type="button", data-bs-toggle="collapse", data-bs-target="#collapseTwo", aria-expanded="false", aria-controls="collapseTwo")
+                      | Accordion Item #2
+                  #collapseTwo.accordion-collapse.collapse(aria-labelledby="headingTwo", data-bs-parent="#accordionExample")
+                    .accordion-body
+                      strong This is the second item&apos;s accordion body.
+                      |  It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It&apos;s also worth noting that just about any HTML can go within the
+                      code .accordion-body
+                      | , though the transition does limit overflow.
+                .accordion-item
+                  h4#headingThree.accordion-header
+                    button.accordion-button.collapsed(type="button", data-bs-toggle="collapse", data-bs-target="#collapseThree", aria-expanded="false", aria-controls="collapseThree")
+                      | Accordion Item #3
+                  #collapseThree.accordion-collapse.collapse(aria-labelledby="headingThree", data-bs-parent="#accordionExample")
+                    .accordion-body
+                      strong This is the third item&apos;s accordion body.
+                      |  It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It&apos;s also worth noting that just about any HTML can go within the
+                      code .accordion-body
+                      | , though the transition does limit overflow.
+        article#alerts.my-3
+          .bd-heading.sticky-xl-top.align-self-start.mt-5.mb-3.mt-xl-0.mb-xl-2
+            h3 Alerts
+            a.d-flex.align-items-center(href="https://www.getbootstraop.com/docs/5.0/components/alerts/" target="_blank" rel="noopener") Documentation
+          div
+            .bd-example
+              .alert.alert-primary.alert-dismissible.fade.show(role="alert")
+                | A simple primary alert with
+                a(href="#") an example link
+                | . Give it a click if you like.
+                button.btn-close(type="button", data-bs-dismiss="alert", aria-label="Close")
+              .alert.alert-secondary.alert-dismissible.fade.show(role="alert")
+                | A simple secondary alert with
+                a(href="#") an example link
+                | . Give it a click if you like.
+                button.btn-close(type="button", data-bs-dismiss="alert", aria-label="Close")
+              .alert.alert-success.alert-dismissible.fade.show(role="alert")
+                | A simple success alert with
+                a(href="#") an example link
+                | . Give it a click if you like.
+                button.btn-close(type="button", data-bs-dismiss="alert", aria-label="Close")
+              .alert.alert-danger.alert-dismissible.fade.show(role="alert")
+                | A simple danger alert with
+                a(href="#") an example link
+                | . Give it a click if you like.
+                button.btn-close(type="button", data-bs-dismiss="alert", aria-label="Close")
+              .alert.alert-warning.alert-dismissible.fade.show(role="alert")
+                | A simple warning alert with
+                a(href="#") an example link
+                | . Give it a click if you like.
+                button.btn-close(type="button", data-bs-dismiss="alert", aria-label="Close")
+              .alert.alert-info.alert-dismissible.fade.show(role="alert")
+                | A simple info alert with
+                a(href="#") an example link
+                | . Give it a click if you like.
+                button.btn-close(type="button", data-bs-dismiss="alert", aria-label="Close")
+              .alert.alert-light.alert-dismissible.fade.show(role="alert")
+                | A simple light alert with
+                a(href="#") an example link
+                | . Give it a click if you like.
+                button.btn-close(type="button", data-bs-dismiss="alert", aria-label="Close")
+              .alert.alert-dark.alert-dismissible.fade.show(role="alert")
+                | A simple dark alert with
+                a(href="#") an example link
+                | . Give it a click if you like.
+                button.btn-close(type="button", data-bs-dismiss="alert", aria-label="Close")
+            .bd-example
+              .alert.alert-success(role="alert")
+                h4.alert-heading Well done!
+                p
+                  | Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.
+                hr
+                p.mb-0
+                  | Whenever you need to, be sure to use margin utilities to keep things nice and tidy.
+        article#badge.my-3
+          .bd-heading.sticky-xl-top.align-self-start.mt-5.mb-3.mt-xl-0.mb-xl-2
+            h3 Badge
+            a.d-flex.align-items-center(href="https://www.getbootstraop.com/docs/5.0/components/badge/" target="_blank" rel="noopener") Documentation
+          div
+            .bd-example
+              p.h1
+                | Example heading
+                span.badge.bg-primary New
+              p.h2
+                | Example heading
+                span.badge.bg-secondary New
+              p.h3
+                | Example heading
+                span.badge.bg-success New
+              p.h4
+                | Example heading
+                span.badge.bg-danger New
+              p.h5
+                | Example heading
+                span.badge.bg-warning.text-dark New
+              p.h6
+                | Example heading
+                span.badge.bg-info.text-dark New
+              p.h6
+                | Example heading
+                span.badge.bg-light.text-dark New
+              p.h6
+                | Example heading
+                span.badge.bg-dark New
+            .bd-example
+              span.badge.bg-primary Primary
+              span.badge.bg-secondary Secondary
+              span.badge.bg-success Success
+              span.badge.bg-danger Danger
+              span.badge.bg-warning.text-dark Warning
+              span.badge.bg-info.text-dark Info
+              span.badge.bg-light.text-dark Light
+              span.badge.bg-dark Dark
+        article#breadcrumb.my-3
+          .bd-heading.sticky-xl-top.align-self-start.mt-5.mb-3.mt-xl-0.mb-xl-2
+            h3 Breadcrumb
+            a.d-flex.align-items-center(href="https://www.getbootstraop.com/docs/5.0/components/breadcrumb/" target="_blank" rel="noopener") Documentation
+          div
+            .bd-example
+              nav(aria-label="breadcrumb")
+                ol.breadcrumb
+                  li.breadcrumb-item
+                    a(href="#") Home
+                  li.breadcrumb-item
+                    a(href="#") Library
+                  li.breadcrumb-item.active(aria-current="page") Data
+        article#buttons.my-3
+          .bd-heading.sticky-xl-top.align-self-start.mt-5.mb-3.mt-xl-0.mb-xl-2
+            h3 Buttons
+            a.d-flex.align-items-center(href="https://www.getbootstraop.com/docs/5.0/components/buttons/" target="_blank" rel="noopener") Documentation
+          div
+            .bd-example
+              button.btn.btn-primary(type="button") Primary
+              button.btn.btn-secondary(type="button") Secondary
+              button.btn.btn-success(type="button") Success
+              button.btn.btn-danger(type="button") Danger
+              button.btn.btn-warning(type="button") Warning
+              button.btn.btn-info(type="button") Info
+              button.btn.btn-light(type="button") Light
+              button.btn.btn-dark(type="button") Dark
+              button.btn.btn-link(type="button") Link
+            .bd-example
+              button.btn.btn-outline-primary(type="button") Primary
+              button.btn.btn-outline-secondary(type="button") Secondary
+              button.btn.btn-outline-success(type="button") Success
+              button.btn.btn-outline-danger(type="button") Danger
+              button.btn.btn-outline-warning(type="button") Warning
+              button.btn.btn-outline-info(type="button") Info
+              button.btn.btn-outline-light(type="button") Light
+              button.btn.btn-outline-dark(type="button") Dark
+            .bd-example
+              button.btn.btn-primary.btn-sm(type="button") Small button
+              button.btn.btn-primary(type="button") Standard button
+              button.btn.btn-primary.btn-lg(type="button") Large button
+        article#button-group.my-3
+          .bd-heading.sticky-xl-top.align-self-start.mt-5.mb-3.mt-xl-0.mb-xl-2
+            h3 Button group
+            a.d-flex.align-items-center(href="https://www.getbootstraop.com/docs/5.0/components/button-group/" target="_blank" rel="noopener") Documentation
+          div
+            .bd-example
+              .btn-toolbar(role="toolbar", aria-label="Toolbar with button groups")
+                .btn-group.me-2(role="group", aria-label="First group")
+                  button.btn.btn-primary(type="button") 1
+                  button.btn.btn-primary(type="button") 2
+                  button.btn.btn-primary(type="button") 3
+                  button.btn.btn-primary(type="button") 4
+                .btn-group.me-2(role="group", aria-label="Second group")
+                  button.btn.btn-primary(type="button") 5
+                  button.btn.btn-primary(type="button") 6
+                  button.btn.btn-primary(type="button") 7
+                .btn-group(role="group", aria-label="Third group")
+                  button.btn.btn-primary(type="button") 8
+        article#card.my-3
+          .bd-heading.sticky-xl-top.align-self-start.mt-5.mb-3.mt-xl-0.mb-xl-2
+            h3 Card
+            a.d-flex.align-items-center(href="https://www.getbootstraop.com/docs/5.0/components/card/" target="_blank" rel="noopener") Documentation
+          div
+            .bd-example
+              .row.row-cols-1.row-cols-md-2.g-4
+                .col
+                  .card
+                    svg.bd-placeholder-img.card-img-top(width="100%", height="180", xmlns="http://www.w3.org/2000/svg", role="img", aria-label="Placeholder: Image cap", preserveaspectratio="xMidYMid slice", focusable="false")
+                      title Placeholder
+                      rect(width="100%", height="100%", fill="#868e96")
+                      text(x="50%", y="50%", fill="#dee2e6", dy=".3em") Image cap
+                    .card-body
+                      h5.card-title Card title
+                      p.card-text
+                        | Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
+                      a(href="#") Go somewhere
+                .col
+                  .card
+                    .card-header
+                      | Featured
+                    .card-body
+                      h5.card-title Card title
+                      p.card-text
+                        | Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
+                      a(href="#") Go somewhere
+                    .card-footer.text-muted
+                      | 2 days ago
+                .col
+                  .card
+                    .card-body
+                      h5.card-title Card title
+                      p.card-text
+                        | Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
+                    ul.list-group.list-group-flush
+                      li.list-group-item An item
+                      li.list-group-item A second item
+                      li.list-group-item A third item
+                    .card-body
+                      a.card-link(href="#") Card link
+                      a.card-link(href="#") Another link
+                .col
+                  .card
+                    .row.g-0
+                      .col-md-4
+                        svg.bd-placeholder-img(width="100%", height="250", xmlns="http://www.w3.org/2000/svg", role="img", aria-label="Placeholder: Image", preserveaspectratio="xMidYMid slice", focusable="false")
+                          title Placeholder
+                          rect(width="100%", height="100%", fill="#868e96")
+                          text(x="50%", y="50%", fill="#dee2e6", dy=".3em") Image
+                      .col-md-8
+                        .card-body
+                          h5.card-title Card title
+                          p.card-text
+                            | This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                          p.card-text
+                            small.text-muted Last updated 3 mins ago
+        article#carousel.my-3
+          .bd-heading.sticky-xl-top.align-self-start.mt-5.mb-3.mt-xl-0.mb-xl-2
+            h3 Carousel
+            a.d-flex.align-items-center(href="https://www.getbootstraop.com/docs/5.0/components/carousel/" target="_blank" rel="noopener") Documentation
+          div
+            .bd-example
+              #carouselExampleCaptions.carousel.slide(data-bs-ride="carousel")
+                .carousel-indicators
+                  button(type="button", data-bs-target="#carouselExampleCaptions", data-bs-slide-to="0", aria-label="Slide 1")
+                  button(type="button", data-bs-target="#carouselExampleCaptions", data-bs-slide-to="1", aria-label="Slide 2")
+                  button.active(type="button", data-bs-target="#carouselExampleCaptions", data-bs-slide-to="2", aria-label="Slide 3", aria-current="true")
+                .carousel-inner
+                  .carousel-item
+                    svg.bd-placeholder-img.bd-placeholder-img-lg.d-block.w-100(width="800", height="400", xmlns="http://www.w3.org/2000/svg", role="img", aria-label="Placeholder: First slide", preserveaspectratio="xMidYMid slice", focusable="false")
+                      title Placeholder
+                      rect(width="100%", height="100%", fill="#777")
+                      text(x="50%", y="50%", fill="#555", dy=".3em") First slide
+                    .carousel-caption.d-none.d-md-block
+                      h5 First slide label
+                      p Some representative placeholder content for the first slide.
+                  .carousel-item
+                    svg.bd-placeholder-img.bd-placeholder-img-lg.d-block.w-100(width="800", height="400", xmlns="http://www.w3.org/2000/svg", role="img", aria-label="Placeholder: Second slide", preserveaspectratio="xMidYMid slice", focusable="false")
+                      title Placeholder
+                      rect(width="100%", height="100%", fill="#666")
+                      text(x="50%", y="50%", fill="#444", dy=".3em") Second slide
+                    .carousel-caption.d-none.d-md-block
+                      h5 Second slide label
+                      p Some representative placeholder content for the second slide.
+                  .carousel-item.active
+                    svg.bd-placeholder-img.bd-placeholder-img-lg.d-block.w-100(width="800", height="400", xmlns="http://www.w3.org/2000/svg", role="img", aria-label="Placeholder: Third slide", preserveaspectratio="xMidYMid slice", focusable="false")
+                      title Placeholder
+                      rect(width="100%", height="100%", fill="#555")
+                      text(x="50%", y="50%", fill="#333", dy=".3em") Third slide
+                    .carousel-caption.d-none.d-md-block
+                      h5 Third slide label
+                      p Some representative placeholder content for the third slide.
+                button.carousel-control-prev(type="button", data-bs-target="#carouselExampleCaptions", data-bs-slide="prev")
+                  span.carousel-control-prev-icon(aria-hidden="true")
+                  span.visually-hidden Previous
+                button.carousel-control-next(type="button", data-bs-target="#carouselExampleCaptions", data-bs-slide="next")
+                  span.carousel-control-next-icon(aria-hidden="true")
+                  span.visually-hidden Next
+        article#dropdowns.my-3
+          .bd-heading.sticky-xl-top.align-self-start.mt-5.mb-3.mt-xl-0.mb-xl-2
+            h3 Dropdowns
+            a.d-flex.align-items-center(href="https://www.getbootstraop.com/docs/5.0/components/dropdowns/" target="_blank" rel="noopener") Documentation
+          div
+            .bd-example
+              .btn-group.w-100.align-items-center.justify-content-between.flex-wrap
+                .dropdown
+                  button#dropdownMenuButtonSM.btn.btn-primary.btn-sm.dropdown-toggle(type="button", data-bs-toggle="dropdown", aria-expanded="false")
+                    | Dropdown button
+                  ul.dropdown-menu(aria-labelledby="dropdownMenuButtonSM")
+                    li
+                      h6.dropdown-header Dropdown header
+                    li
+                      a.dropdown-item(href="#") Action
+                    li
+                      a.dropdown-item(href="#") Another action
+                    li
+                      a.dropdown-item(href="#") Something else here
+                    li
+                      hr.dropdown-divider
+                    li
+                      a.dropdown-item(href="#") Separated link
+                .dropdown
+                  button#dropdownMenuButton.btn.btn-primary.dropdown-toggle(type="button", data-bs-toggle="dropdown", aria-expanded="false")
+                    | Dropdown button
+                  ul.dropdown-menu(aria-labelledby="dropdownMenuButton")
+                    li
+                      h6.dropdown-header Dropdown header
+                    li
+                      a.dropdown-item(href="#") Action
+                    li
+                      a.dropdown-item(href="#") Another action
+                    li
+                      a.dropdown-item(href="#") Something else here
+                    li
+                      hr.dropdown-divider
+                    li
+                      a.dropdown-item(href="#") Separated link
+                .dropdown
+                  button#dropdownMenuButtonLG.btn.btn-primary.btn-lg.dropdown-toggle(type="button", data-bs-toggle="dropdown", aria-expanded="false")
+                    | Dropdown button
+                  ul.dropdown-menu(aria-labelledby="dropdownMenuButtonLG")
+                    li
+                      h6.dropdown-header Dropdown header
+                    li
+                      a.dropdown-item(href="#") Action
+                    li
+                      a.dropdown-item(href="#") Another action
+                    li
+                      a.dropdown-item(href="#") Something else here
+                    li
+                      hr.dropdown-divider
+                    li
+                      a.dropdown-item(href="#") Separated link
+            .bd-example
+              .btn-group
+                button.btn.btn-primary(type="button") Primary
+                button.btn.btn-primary.dropdown-toggle.dropdown-toggle-split(type="button", data-bs-toggle="dropdown", aria-expanded="false")
+                  span.visually-hidden Toggle Dropdown
+                ul.dropdown-menu
+                  li
+                    a.dropdown-item(href="#") Action
+                  li
+                    a.dropdown-item(href="#") Another action
+                  li
+                    a.dropdown-item(href="#") Something else here
+              // /btn-group
+              .btn-group
+                button.btn.btn-secondary(type="button") Secondary
+                button.btn.btn-secondary.dropdown-toggle.dropdown-toggle-split(type="button", data-bs-toggle="dropdown", aria-expanded="false")
+                  span.visually-hidden Toggle Dropdown
+                ul.dropdown-menu
+                  li
+                    a.dropdown-item(href="#") Action
+                  li
+                    a.dropdown-item(href="#") Another action
+                  li
+                    a.dropdown-item(href="#") Something else here
+              // /btn-group
+              .btn-group
+                button.btn.btn-success(type="button") Success
+                button.btn.btn-success.dropdown-toggle.dropdown-toggle-split(type="button", data-bs-toggle="dropdown", aria-expanded="false")
+                  span.visually-hidden Toggle Dropdown
+                ul.dropdown-menu
+                  li
+                    a.dropdown-item(href="#") Action
+                  li
+                    a.dropdown-item(href="#") Another action
+                  li
+                    a.dropdown-item(href="#") Something else here
+              // /btn-group
+              .btn-group
+                button.btn.btn-info(type="button") Info
+                button.btn.btn-info.dropdown-toggle.dropdown-toggle-split(type="button", data-bs-toggle="dropdown", aria-expanded="false")
+                  span.visually-hidden Toggle Dropdown
+                ul.dropdown-menu
+                  li
+                    a.dropdown-item(href="#") Action
+                  li
+                    a.dropdown-item(href="#") Another action
+                  li
+                    a.dropdown-item(href="#") Something else here
+              // /btn-group
+              .btn-group
+                button.btn.btn-warning(type="button") Warning
+                button.btn.btn-warning.dropdown-toggle.dropdown-toggle-split(type="button", data-bs-toggle="dropdown", aria-expanded="false")
+                  span.visually-hidden Toggle Dropdown
+                ul.dropdown-menu
+                  li
+                    a.dropdown-item(href="#") Action
+                  li
+                    a.dropdown-item(href="#") Another action
+                  li
+                    a.dropdown-item(href="#") Something else here
+              // /btn-group
+              .btn-group
+                button.btn.btn-danger(type="button") Danger
+                button.btn.btn-danger.dropdown-toggle.dropdown-toggle-split(type="button", data-bs-toggle="dropdown", aria-expanded="false")
+                  span.visually-hidden Toggle Dropdown
+                ul.dropdown-menu
+                  li
+                    a.dropdown-item(href="#") Action
+                  li
+                    a.dropdown-item(href="#") Another action
+                  li
+                    a.dropdown-item(href="#") Something else here
+              // /btn-group
+            .bd-example
+              .btn-group.w-100.align-items-center.justify-content-between.flex-wrap
+                .dropend
+                  button#dropendMenuButton.btn.btn-primary.dropdown-toggle(type="button", data-bs-toggle="dropdown", aria-expanded="false")
+                    | Dropend button
+                  ul.dropdown-menu(aria-labelledby="dropendMenuButton")
+                    li
+                      h6.dropdown-header Dropdown header
+                    li
+                      a.dropdown-item(href="#") Action
+                    li
+                      a.dropdown-item(href="#") Another action
+                    li
+                      a.dropdown-item(href="#") Something else here
+                    li
+                      hr.dropdown-divider
+                    li
+                      a.dropdown-item(href="#") Separated link
+                .dropup
+                  button#dropupMenuButton.btn.btn-primary.dropdown-toggle(type="button", data-bs-toggle="dropdown", aria-expanded="false")
+                    | Dropup button
+                  ul.dropdown-menu(aria-labelledby="dropupMenuButton")
+                    li
+                      h6.dropdown-header Dropdown header
+                    li
+                      a.dropdown-item(href="#") Action
+                    li
+                      a.dropdown-item(href="#") Another action
+                    li
+                      a.dropdown-item(href="#") Something else here
+                    li
+                      hr.dropdown-divider
+                    li
+                      a.dropdown-item(href="#") Separated link
+                .dropstart
+                  button#dropstartMenuButton.btn.btn-primary.dropdown-toggle(type="button", data-bs-toggle="dropdown", aria-expanded="false")
+                    | Dropstart button
+                  ul.dropdown-menu(aria-labelledby="dropstartMenuButton")
+                    li
+                      h6.dropdown-header Dropdown header
+                    li
+                      a.dropdown-item(href="#") Action
+                    li
+                      a.dropdown-item(href="#") Another action
+                    li
+                      a.dropdown-item(href="#") Something else here
+                    li
+                      hr.dropdown-divider
+                    li
+                      a.dropdown-item(href="#") Separated link
+            .bd-example
+              .btn-group
+                .dropdown
+                  button#dropdownRightMenuButton.btn.btn-primary.dropdown-toggle(type="button", data-bs-toggle="dropdown", aria-expanded="false")
+                    | End-aligned menu
+                  ul.dropdown-menu.dropdown-menu-end(aria-labelledby="dropdownRightMenuButton")
+                    li
+                      h6.dropdown-header Dropdown header
+                    li
+                      a.dropdown-item(href="#") Action
+                    li
+                      a.dropdown-item(href="#") Another action
+                    li
+                      hr.dropdown-divider
+                    li
+                      a.dropdown-item(href="#") Separated link
+        article#list-group.my-3
+          .bd-heading.sticky-xl-top.align-self-start.mt-5.mb-3.mt-xl-0.mb-xl-2
+            h3 List group
+            a.d-flex.align-items-center(href="https://www.getbootstraop.com/docs/5.0/components/list-group/" target="_blank" rel="noopener") Documentation
+          div
+            .bd-example
+              ul.list-group
+                li.list-group-item.disabled(aria-disabled="true") A disabled item
+                li.list-group-item A second item
+                li.list-group-item A third item
+                li.list-group-item A fourth item
+                li.list-group-item And a fifth one
+            .bd-example
+              ul.list-group.list-group-flush
+                li.list-group-item An item
+                li.list-group-item A second item
+                li.list-group-item A third item
+                li.list-group-item A fourth item
+                li.list-group-item And a fifth one
+            .bd-example
+              .list-group
+                a.list-group-item.list-group-item-action(href="#") A simple default list group item
+                a.list-group-item.list-group-item-action.list-group-item-primary(href="#") A simple primary list group item
+                a.list-group-item.list-group-item-action.list-group-item-secondary(href="#") A simple secondary list group item
+                a.list-group-item.list-group-item-action.list-group-item-success(href="#") A simple success list group item
+                a.list-group-item.list-group-item-action.list-group-item-danger(href="#") A simple danger list group item
+                a.list-group-item.list-group-item-action.list-group-item-warning(href="#") A simple warning list group item
+                a.list-group-item.list-group-item-action.list-group-item-info(href="#") A simple info list group item
+                a.list-group-item.list-group-item-action.list-group-item-light(href="#") A simple light list group item
+                a.list-group-item.list-group-item-action.list-group-item-dark(href="#") A simple dark list group item
+        article#modal.my-3
+          .bd-heading.sticky-xl-top.align-self-start.mt-5.mb-3.mt-xl-0.mb-xl-2
+            h3 Modal
+            a.d-flex.align-items-center(href="https://www.getbootstraop.com/docs/5.0/components/modal/" target="_blank" rel="noopener") Documentation
+          div
+            .bd-example
+              .d-flex.justify-content-between.flex-wrap
+                button.btn(type="button", data-bs-toggle="modal", data-bs-target="#exampleModalDefault")
+                  | Launch demo modal
+                button.btn(type="button", data-bs-toggle="modal", data-bs-target="#staticBackdropLive")
+                  | Launch static backdrop modal
+                button.btn(type="button", data-bs-toggle="modal", data-bs-target="#exampleModalCenteredScrollable")
+                  | Vertically centered scrollable modal
+                button.btn(type="button", data-bs-toggle="modal", data-bs-target="#exampleModalFullscreen")
+                  | Full screen
+        article#navs.my-3
+          .bd-heading.sticky-xl-top.align-self-start.mt-5.mb-3.mt-xl-0.mb-xl-2
+            h3 Navs
+            a.d-flex.align-items-center(href="https://www.getbootstraop.com/docs/5.0/components/navs-tabs/" target="_blank" rel="noopener") Documentation
+          div
+            .bd-example
+              nav.nav
+                a.nav-link.active(aria-current="page", href="#") Active
+                a.nav-link(href="#") Link
+                a.nav-link(href="#") Link
+                a.nav-link.disabled(href="#", tabindex="-1", aria-disabled="true") Disabled
+            .bd-example
+              nav
+                #nav-tab.nav.nav-tabs.mb-3(role="tablist")
+                  button#nav-home-tab.nav-link.active(data-bs-toggle="tab", data-bs-target="#nav-home", type="button", role="tab", aria-controls="nav-home", aria-selected="true") Home
+                  button#nav-profile-tab.nav-link(data-bs-toggle="tab", data-bs-target="#nav-profile", type="button", role="tab", aria-controls="nav-profile", aria-selected="false") Profile
+                  button#nav-contact-tab.nav-link(data-bs-toggle="tab", data-bs-target="#nav-contact", type="button", role="tab", aria-controls="nav-contact", aria-selected="false") Contact
+              #nav-tabContent.tab-content
+                #nav-home.tab-pane.fade.show.active(role="tabpanel", aria-labelledby="nav-home-tab")
+                  p
+                    strong This is some placeholder content the Home tab&apos;s associated content.
+                    |  Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other
+                    code .nav
+                    | -powered navigation.
+                #nav-profile.tab-pane.fade(role="tabpanel", aria-labelledby="nav-profile-tab")
+                  p
+                    strong This is some placeholder content the Profile tab&apos;s associated content.
+                    |  Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other
+                    code .nav
+                    | -powered navigation.
+                #nav-contact.tab-pane.fade(role="tabpanel", aria-labelledby="nav-contact-tab")
+                  p
+                    strong This is some placeholder content the Contact tab&apos;s associated content.
+                    |  Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other
+                    code .nav
+                    | -powered navigation.
+            .bd-example
+              ul.nav.nav-pills
+                li.nav-item
+                  a.nav-link.active(aria-current="page", href="#") Active
+                li.nav-item
+                  a.nav-link(href="#") Link
+                li.nav-item
+                  a.nav-link(href="#") Link
+                li.nav-item
+                  a.nav-link.disabled(href="#", tabindex="-1", aria-disabled="true") Disabled
+        article#navbar.my-3
+          .bd-heading.sticky-xl-top.align-self-start.mt-5.mb-3.mt-xl-0.mb-xl-2
+            h3 Navbar
+            a.d-flex.align-items-center(href="https://www.getbootstraop.com/docs/5.0/components/navbar/" target="_blank" rel="noopener") Documentation
+          div
+            .bd-example
+              nav.navbar.navbar-expand-lg.navbar-light.bg-light
+                .container-fluid
+                  a.navbar-brand(href="#")
+                    img.d-inline-block.align-top(src="https://www.getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo-white.svg", width="38", height="30", alt="Bootstrap", loading="lazy", style="filter: invert(1) grayscale(100%) brightness(200%);")
+                  button.navbar-toggler(type="button", data-bs-toggle="collapse", data-bs-target="#navbarSupportedContent", aria-controls="navbarSupportedContent", aria-expanded="false", aria-label="Toggle navigation")
+                    span.navbar-toggler-icon
+                  #navbarSupportedContent.collapse.navbar-collapse
+                    ul.navbar-nav.me-auto.mb-2.mb-lg-0
+                      li.nav-item
+                        a.nav-link.active(aria-current="page", href="#") Home
+                      li.nav-item
+                        a.nav-link(href="#") Link
+                      li.nav-item.dropdown
+                        a#navbarDropdown.nav-link.dropdown-toggle(href="#", role="button", data-bs-toggle="dropdown", aria-expanded="false")
+                          | Dropdown
+                        ul.dropdown-menu(aria-labelledby="navbarDropdown")
+                          li
+                            a.dropdown-item(href="#") Action
+                          li
+                            a.dropdown-item(href="#") Another action
+                          li
+                            hr.dropdown-divider
+                          li
+                            a.dropdown-item(href="#") Something else here
+                      li.nav-item
+                        a.nav-link.disabled(href="#", tabindex="-1", aria-disabled="true") Disabled
+                    form.d-flex
+                      input.form-control.me-2(type="search", placeholder="Search", aria-label="Search")
+                      button.btn.btn-outline-dark(type="submit") Search
+              nav.navbar.navbar-expand-lg.navbar-dark.bg-primary.mt-5
+                .container-fluid
+                  a.navbar-brand(href="#")
+                    img.d-inline-block.align-top(src="https://www.getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo-white.svg", width="38", height="30", alt="Bootstrap", loading="lazy")
+                  button.navbar-toggler(type="button", data-bs-toggle="collapse", data-bs-target="#navbarSupportedContent2", aria-controls="navbarSupportedContent2", aria-expanded="false", aria-label="Toggle navigation")
+                    span.navbar-toggler-icon
+                  #navbarSupportedContent2.collapse.navbar-collapse
+                    ul.navbar-nav.me-auto.mb-2.mb-lg-0
+                      li.nav-item
+                        a.nav-link.active(aria-current="page", href="#") Home
+                      li.nav-item
+                        a.nav-link(href="#") Link
+                      li.nav-item.dropdown
+                        a#navbarDropdown2.nav-link.dropdown-toggle(href="#", role="button", data-bs-toggle="dropdown", aria-expanded="false")
+                          | Dropdown
+                        ul.dropdown-menu(aria-labelledby="navbarDropdown2")
+                          li
+                            a.dropdown-item(href="#") Action
+                          li
+                            a.dropdown-item(href="#") Another action
+                          li
+                            hr.dropdown-divider
+                          li
+                            a.dropdown-item(href="#") Something else here
+                      li.nav-item
+                        a.nav-link.disabled(href="#", tabindex="-1", aria-disabled="true") Disabled
+                    form.d-flex
+                      input.form-control.me-2(type="search", placeholder="Search", aria-label="Search")
+                      button.btn.btn-outline-light(type="submit") Search
+        article#pagination.my-3
+          .bd-heading.sticky-xl-top.align-self-start.mt-5.mb-3.mt-xl-0.mb-xl-2
+            h3 Pagination
+            a.d-flex.align-items-center(href="https://www.getbootstraop.com/docs/5.0/components/pagination/" target="_blank" rel="noopener") Documentation
+          div
+            .bd-example
+              nav(aria-label="Pagination example")
+                ul.pagination.pagination-sm
+                  li.page-item
+                    a.page-link(href="#") 1
+                  li.page-item.active(aria-current="page")
+                    a.page-link(href="#") 2
+                  li.page-item
+                    a.page-link(href="#") 3
+            .bd-example
+              nav(aria-label="Standard pagination example")
+                ul.pagination
+                  li.page-item
+                    a.page-link(href="#", aria-label="Previous")
+                      span(aria-hidden="true") &laquo;
+                  li.page-item
+                    a.page-link(href="#") 1
+                  li.page-item
+                    a.page-link(href="#") 2
+                  li.page-item
+                    a.page-link(href="#") 3
+                  li.page-item
+                    a.page-link(href="#", aria-label="Next")
+                      span(aria-hidden="true") &raquo;
+            .bd-example
+              nav(aria-label="Another pagination example")
+                ul.pagination.pagination-lg.flex-wrap
+                  li.page-item.disabled
+                    a.page-link(href="#", tabindex="-1", aria-disabled="true") Previous
+                  li.page-item
+                    a.page-link(href="#") 1
+                  li.page-item.active(aria-current="page")
+                    a.page-link(href="#") 2
+                  li.page-item
+                    a.page-link(href="#") 3
+                  li.page-item
+                    a.page-link(href="#") Next
+        article#popovers.my-3
+          .bd-heading.sticky-xl-top.align-self-start.mt-5.mb-3.mt-xl-0.mb-xl-2
+            h3 Popovers
+            a.d-flex.align-items-center(href="https://www.getbootstraop.com/docs/5.0/components/popovers/" target="_blank" rel="noopener") Documentation
+          div
+            .bd-example
+              button.btn.btn-lg.btn-danger(type="button", data-bs-toggle="popover", title="", data-bs-content="And here's some amazing content. It's very engaging. Right?", data-bs-original-title="Popover title") Click to toggle popover
+            .bd-example
+              button.btn(type="button", data-bs-container="body", data-bs-toggle="popover", data-bs-placement="top", data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.", data-bs-original-title="", title="")
+                | Popover on top
+              button.btn(type="button", data-bs-container="body", data-bs-toggle="popover", data-bs-placement="right", data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.", data-bs-original-title="", title="")
+                | Popover on end
+              button.btn(type="button", data-bs-container="body", data-bs-toggle="popover", data-bs-placement="bottom", data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.", data-bs-original-title="", title="")
+                | Popover on bottom
+              button.btn(type="button", data-bs-container="body", data-bs-toggle="popover", data-bs-placement="left", data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.", data-bs-original-title="", title="")
+                | Popover on start
+        article#progress.my-3
+          .bd-heading.sticky-xl-top.align-self-start.mt-5.mb-3.mt-xl-0.mb-xl-2
+            h3 Progress
+            a.d-flex.align-items-center(href="https://www.getbootstraop.com/docs/5.0/components/progress/" target="_blank" rel="noopener") Documentation
+          div
+            .bd-example
+              .progress.mb-3
+                .progress-bar(role="progressbar", aria-valuenow="0", aria-valuemin="0", aria-valuemax="100") 0%
+              .progress.mb-3
+                .progress-bar.bg-success.w-25(role="progressbar", aria-valuenow="25", aria-valuemin="0", aria-valuemax="100") 25%
+              .progress.mb-3
+                .progress-bar.bg-info.text-dark.w-50(role="progressbar", aria-valuenow="50", aria-valuemin="0", aria-valuemax="100") 50%
+              .progress.mb-3
+                .progress-bar.bg-warning.text-dark.w-75(role="progressbar", aria-valuenow="75", aria-valuemin="0", aria-valuemax="100") 75%
+              .progress
+                .progress-bar.bg-danger.w-100(role="progressbar", aria-valuenow="100", aria-valuemin="0", aria-valuemax="100") 100%
+            .bd-example
+              .progress
+                .progress-bar(role="progressbar", style="width: 15%", aria-valuenow="15", aria-valuemin="0", aria-valuemax="100")
+                .progress-bar.progress-bar-striped.progress-bar-animated.bg-success(role="progressbar", style="width: 40%", aria-valuenow="40", aria-valuemin="0", aria-valuemax="100")
+        article#scrollspy.my-3
+          .bd-heading.sticky-xl-top.align-self-start.mt-5.mb-3.mt-xl-0.mb-xl-2
+            h3 Scrollspy
+            a.d-flex.align-items-center(href="https://www.getbootstraop.com/docs/5.0/components/scrollspy/" target="_blank" rel="noopener") Documentation
+          div
+            .bd-example
+              nav#navbar-example2.navbar.navbar-light.bg-light.px-3
+                a.navbar-brand(href="#") Navbar
+                ul.nav.nav-pills
+                  li.nav-item
+                    a.nav-link(href="#scrollspyHeading1") First
+                  li.nav-item
+                    a.nav-link(href="#scrollspyHeading2") Second
+                  li.nav-item.dropdown
+                    a.nav-link.dropdown-toggle.active(data-bs-toggle="dropdown", href="#", role="button", aria-expanded="false") Dropdown
+                    ul.dropdown-menu
+                      li
+                        a.dropdown-item(href="#scrollspyHeading3") Third
+                      li
+                        a.dropdown-item(href="#scrollspyHeading4") Fourth
+                      li
+                        hr.dropdown-divider
+                      li
+                        a.dropdown-item.active(href="#scrollspyHeading5") Fifth
+              .scrollspy-example(data-bs-spy="scroll", data-bs-target="#navbar-example2", data-bs-offset="0", tabindex="0")
+                h4#scrollspyHeading1 First heading
+                p
+                  | This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It&apos;s repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.
+                h4#scrollspyHeading2 Second heading
+                p
+                  | This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It&apos;s repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.
+                h4#scrollspyHeading3 Third heading
+                p
+                  | This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It&apos;s repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.
+                h4#scrollspyHeading4 Fourth heading
+                p
+                  | This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It&apos;s repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.
+                h4#scrollspyHeading5 Fifth heading
+                p
+                  | This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It&apos;s repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.
+        article#spinners.my-3
+          .bd-heading.sticky-xl-top.align-self-start.mt-5.mb-3.mt-xl-0.mb-xl-2
+            h3 Spinners
+            a.d-flex.align-items-center(href="https://www.getbootstraop.com/docs/5.0/components/spinners/" target="_blank" rel="noopener") Documentation
+          div
+            .bd-example
+              .spinner-border.text-primary(role="status")
+                span.visually-hidden Loading...
+              .spinner-border.text-secondary(role="status")
+                span.visually-hidden Loading...
+              .spinner-border.text-success(role="status")
+                span.visually-hidden Loading...
+              .spinner-border.text-danger(role="status")
+                span.visually-hidden Loading...
+              .spinner-border.text-warning(role="status")
+                span.visually-hidden Loading...
+              .spinner-border.text-info(role="status")
+                span.visually-hidden Loading...
+              .spinner-border.text-light(role="status")
+                span.visually-hidden Loading...
+              .spinner-border.text-dark(role="status")
+                span.visually-hidden Loading...
+            .bd-example
+              .spinner-grow.text-primary(role="status")
+                span.visually-hidden Loading...
+              .spinner-grow.text-secondary(role="status")
+                span.visually-hidden Loading...
+              .spinner-grow.text-success(role="status")
+                span.visually-hidden Loading...
+              .spinner-grow.text-danger(role="status")
+                span.visually-hidden Loading...
+              .spinner-grow.text-warning(role="status")
+                span.visually-hidden Loading...
+              .spinner-grow.text-info(role="status")
+                span.visually-hidden Loading...
+              .spinner-grow.text-light(role="status")
+                span.visually-hidden Loading...
+              .spinner-grow.text-dark(role="status")
+                span.visually-hidden Loading...
+        article#toasts.my-3
+          .bd-heading.sticky-xl-top.align-self-start.mt-5.mb-3.mt-xl-0.mb-xl-2
+            h3 Toasts
+            a.d-flex.align-items-center(href="https://www.getbootstraop.com/docs/5.0/components/toasts/" target="_blank" rel="noopener") Documentation
+          div
+            .bd-example.bg-dark.p-5.align-items-center
+              .toast.fade.show(role="alert", aria-live="assertive", aria-atomic="true")
+                .toast-header
+                  svg.bd-placeholder-img.rounded.me-2(width="20", height="20", xmlns="http://www.w3.org/2000/svg", aria-hidden="true", preserveaspectratio="xMidYMid slice", focusable="false")
+                    rect(width="100%", height="100%", fill="#007aff")
+                  strong.me-auto Bootstrap
+                  small.text-muted 11 mins ago
+                  button.btn-close(type="button", data-bs-dismiss="toast", aria-label="Close")
+                .toast-body
+                  | Hello, world! This is a toast message.
+        article#tooltips.mt-3.mb-5.pb-5
+          .bd-heading.sticky-xl-top.align-self-start.mt-5.mb-3.mt-xl-0.mb-xl-2
+            h3 Tooltips
+            a.d-flex.align-items-center(href="https://www.getbootstraop.com/docs/5.0/components/tooltips/" target="_blank" rel="noopener") Documentation
+          div
+            .bd-example.tooltip-demo
+              button.btn(type="button", data-bs-toggle="tooltip", data-bs-placement="top", title="Tooltip on top") Tooltip on top
+              button.btn(type="button", data-bs-toggle="tooltip", data-bs-placement="right", title="Tooltip on end") Tooltip on end
+              button.btn(type="button", data-bs-toggle="tooltip", data-bs-placement="bottom", title="Tooltip on bottom") Tooltip on bottom
+              button.btn(type="button", data-bs-toggle="tooltip", data-bs-placement="left", title="Tooltip on start") Tooltip on start
+              button.btn(type="button", data-bs-toggle="tooltip", data-bs-html="true", title="<em>Tooltip</em> <u>with</u> <b>HTML</b>") Tooltip with HTML
+    #exampleModalDefault.modal.fade(tabindex="-1", aria-labelledby="exampleModalLabel", aria-hidden="true")
+      .modal-dialog
+        .modal-content
+          .modal-header
+            h5#exampleModalLabel.modal-title Modal title
+            button.btn-close(type="button", data-bs-dismiss="modal", aria-label="Close")
+          .modal-body
+            | ...
+          .modal-footer
+            button.btn(type="button", data-bs-dismiss="modal") Close
+            button.btn(type="button") Save changes
+    #staticBackdropLive.modal.fade(data-bs-backdrop="static", data-bs-keyboard="false", tabindex="-1", aria-labelledby="staticBackdropLiveLabel", aria-hidden="true")
+      .modal-dialog
+        .modal-content
+          .modal-header
+            h5#staticBackdropLiveLabel.modal-title Modal title
+            button.btn-close(type="button", data-bs-dismiss="modal", aria-label="Close")
+          .modal-body
+            p I will not close if you click outside me. Don&apos;t even try to press escape key.
+          .modal-footer
+            button.btn(type="button", data-bs-dismiss="modal") Close
+            button.btn(type="button") Understood
+    #exampleModalCenteredScrollable.modal.fade(tabindex="-1", aria-labelledby="exampleModalCenteredScrollableTitle", aria-hidden="true")
+      .modal-dialog.modal-dialog-centered.modal-dialog-scrollable
+        .modal-content
+          .modal-header
+            h5#exampleModalCenteredScrollableTitle.modal-title Modal title
+            button.btn-close(type="button", data-bs-dismiss="modal", aria-label="Close")
+          .modal-body
+            p
+              | This is some placeholder content to show the scrolling behavior for modals. We use repeated line breaks to demonstrate how content can exceed minimum inner height, thereby showing inner scrolling. When content becomes longer than the prefedined max-height of modal, content will be cropped and scrollable within the modal.
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            p This content should appear at the bottom after you scroll.
+          .modal-footer
+            button.btn(type="button", data-bs-dismiss="modal") Close
+            button.btn(type="button") Save changes
+    #exampleModalFullscreen.modal.fade(tabindex="-1", aria-labelledby="exampleModalFullscreenLabel", aria-hidden="true")
+      .modal-dialog.modal-fullscreen
+        .modal-content
+          .modal-header
+            h5#exampleModalFullscreenLabel.modal-title.h4 Full screen modal
+            button.btn-close(type="button", data-bs-dismiss="modal", aria-label="Close")
+          .modal-body
+            | ...
+          .modal-footer
+            button.btn(type="button", data-bs-dismiss="modal") Close
+    script(src="cheatsheet.js")
+
+    script(src='js/bootstrap.js')
+    script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous")
